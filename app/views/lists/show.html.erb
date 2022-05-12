@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="container d-flex align-items-center gap-2">
+    <h1><%= @list.name %></h1>
+    <%= link_to new_list_bookmark_path(@list), class: 'text primary' do %>
+      <p>Add bookmark</p>
+    <% end %>
+  </div>
+  <div class="container p-3">
+    <% @bookmarks.each do |bookmark| %>
+      <div class="card">
+      <%= image_tag bookmark.movie.poster_url %>
+        <%# <div class="bookmark-container text-light" style="background-image: url<%= bookmark.movie.poster_url %>
+        <div class="container pt-2">
+          <h3><%= bookmark.movie.title %></h3>
+          <p><%= bookmark.movie.overview %></p>
+          <p>Rating: <%= bookmark.movie.rating %></p>
+        </div>
+        <div class="container d-flex justify-content-between p-3">
+          <p><i class="fas fa-quote-left text-secondary"></i> <%= bookmark.comment %> <i class="fas fa-quote-right text-secondary"></i></p>
+          <%= link_to bookmark_path(bookmark), method: :delete, data: {confirm: "Are you sure?"}, class: 'text primary' do %>
+            <i class="fas fa-trash-alt text-danger"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

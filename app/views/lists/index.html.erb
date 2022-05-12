@@ -1,0 +1,11 @@
+<h1>Movies List</h1>
+
+<div class="container">
+  <% @lists.each do |list| %>
+    <div class="card">
+      <%= link_to list_path(list), class: 'text-primary' do %>
+        <h3><%= list.name %></h3>
+      <% end %>
+    </div>
+  <% end %>
+</div>

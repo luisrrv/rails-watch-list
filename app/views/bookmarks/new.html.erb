@@ -1,0 +1,11 @@
+<h1>Add a new bookmark</h1>
+
+<div class="container">
+  <%# <h1>Spawn a Monster</h1> %>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie %>
+    <%# <%= f.input :image_url %>
+    <%= f.submit 'Add', class: 'btn btn-primary' %>
+  <% end %>
+</div>

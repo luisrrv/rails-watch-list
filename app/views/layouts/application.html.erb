@@ -11,6 +11,16 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-light bg-light px-5">
+      <%= link_to lists_path, class: 'navbar-brand' do %>
+        <h3>Home</h3>
+      <% end %>
+      <%= link_to new_list_path, class: 'navbar-brand' do %>
+        <h3>New List</h3>
+      <% end %>
+      <%# <a class="navbar-brand" href="#">Navbar</a> %>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
