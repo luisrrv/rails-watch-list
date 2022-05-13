@@ -4,8 +4,10 @@
 body {
   background-color: $gray;
   color: $light-gray;
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/1600x900/?theater');
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.gannett-cdn.com/-mm-/83e081eae80cd2848af52df6da1060d621468f19/c=0-111-2120-1303/local/-/media/2021/02/04/USATODAY/usatsports/red-movie-theater-seats.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 p {
@@ -19,19 +21,80 @@ a {
   color: $light-gray;
   transition: font-size 300ms;
   &:hover {
-    font-size: 110%;
+    font-size: 120%;
     color: $light-gray;
   }
 }
+.plus-movie {
+  font-size: 1.5rem;
+}
 
 i {
-  color: $yellow;
+  color: $red;
 }
+
+.fa-trash-alt {
+  font-size: 2rem;
+}
+
+.card-trip {
+  overflow: hidden;
+  background: rgba(33, 33, 33, 0.804);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  &:hover > .card-trip-infos .card-trip-user {
+    display: block;
+  }
+}
+
+.card-trip > img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // align-items: flex-end;
+  position: relative;
+  div {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 2px;
+  top: -388px;
+  width: 40px;
+  display: none;
+  transition: 200ms;
+}
+
+
+
+// bootstrap
 
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,5 +146,48 @@ i {
 @media (min-width: 1200px) {
   .cards {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+.cards2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
+  font-family: 'Poppins', sans-serif;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards2 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards2 {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
